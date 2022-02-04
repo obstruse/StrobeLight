@@ -8,7 +8,7 @@ The problem with using DotStar LEDS for this is that the LEDS are addressed one-
 
 Unfortunately, the standard Adafruit_DotStar library doesn't operate at that speed.  Best I could get with v1.2.0 ("BusIO version") and 288 LEDs was 1/174 second on-time (software SPI) and 1/83 second on-time (hardware SPI).
 
-Included is __dotStar.cpp__, a modified version of the Adafruit_DotStar library v1.1.5.  The modifications bring the clock rate to 6 MHz for software SPI, and 15 MHz for hardware SPI.  It should be possible to run the SK9822 LEDS at 30MHz clock, but it seems to depend on the length of the strip.  With 288 LEDs, 15MHz is the highest frequency that works reliably.
+Included is __dotStar.cpp__, a modified version of the Adafruit_DotStar library v1.1.5.  The modifications bring the clock rate to 6 MHz for software SPI, and 40 MHz for hardware SPI.  It should be possible to run the SK9822 LEDS at 30MHz clock, but it seems to depend on the length of the strip.  With 288 LEDs, 19MHz is the highest frequency that works reliably.
 
 
 
@@ -43,6 +43,9 @@ Before taking a picture:
 
 
 # Gallery
+
+Fifteen MHz clock, one second exposure, ISO 1600
+
 ![Bounce](images/IMG_3606-bounce1-4.JPG)
 ![Gravity](images/IMG_3533-gravity-4.JPG)
 ![Slinky](images/IMG_3653-slinky1-4.JPG)
