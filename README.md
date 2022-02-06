@@ -6,9 +6,9 @@ Strobe Light using DotStar LEDS and ESP32.
 
 The problem with using DotStar LEDS for this is that the LEDS are addressed one-at-a-time; it's a shift register.  A fast strobe flash requires clocking the DotStar strip at a high frequency.  For example, the images displayed here use a 288 LED strip clocked at 15 MHz, giving an on-time of 780 microseconds (1/1280 second).  Exposure time for the 'double bounce' was 2 seconds at ISO 1600.
 
-Unfortunately, the standard Adafruit_DotStar library doesn't operate at that speed.  Best I could get with v1.2.0 ("BusIO version") and 288 LEDs was 1/174 second on-time (software SPI) and 1/83 second on-time (hardware SPI).
+Unfortunately, the standard Adafruit_DotStar library doesn't operate at that speed.  Best I could get with v1.2.0 ("BusIO version") set to 15MHz with 288 LEDs was 1/174 second on-time (software SPI) and 1/83 second on-time (hardware SPI).
 
-Included is __dotStar.cpp__, a modified version of the Adafruit_DotStar library v1.1.5.  The modifications bring the clock rate to 6 MHz for software SPI, and 40 MHz for hardware SPI.  It should be possible to run the SK9822 LEDS at 30MHz clock, but it seems to depend on the length of the strip.  With 288 LEDs, 19MHz is the highest frequency that works reliably.
+Included is __dotStar.cpp__, a optimized version of the Adafruit_DotStar library v1.1.5.  The modifications bring the 288-LED on-time to 1/526 second for software SPI, and 1/1280 second for hardware SPI.  It should be possible to run the SK9822 LEDS at 30MHz clock, but it seems to depend on the length of the strip.  With 288 LEDs, 19MHz is the highest clock frequency that works reliably.
 
 
 
