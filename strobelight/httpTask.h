@@ -49,7 +49,7 @@ void handleRoot() {
  <tr><td colspan=2></td></tr>\
  <form action='/setMode'>\
  <tr><td colspan=2><table border='0' style='width:100%%;text-align:center'><tr><td><button type ='submit' name='mode' value='1'  >Strobe</button></td>\
-     <td><button type ='submit' name='mode' value='-1' >Flash</button></td></tr></table></td></tr>\
+     <td><button type ='submit' name='mode' value='-2' >Full</button></td><td><button type ='submit' name='mode' value='-1' >Flash</button></td></tr></table></td></tr>\
 </form>\
  <tr><td colspan=2></td></tr>\
  <tr><td colspan=2>\

@@ -67,11 +67,15 @@ void dotstar(void * pvParameters) {
           strip.show();
           DOTSTAR.onTime = (micros() - startTime)/2;
 
-    } else if (DOTSTAR.mode < 0 ) {   // flash once
+    } else if (DOTSTAR.mode == -1 ) {   // flash once
           DOTSTAR.mode = 0;
           strip.fill( 0xffffffff );
           strip.show();
           strip.clear();
+          strip.show();
+    } else if (DOTSTAR.mode == -2 ) {    // full on
+          DOTSTAR.mode = 0;
+          strip.fill( 0xffffffff );
           strip.show();
 
     } else {                          // don't do anything
